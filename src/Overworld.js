@@ -57,8 +57,11 @@ class Overworld extends Phaser.Scene {
 
         //set collision by property on terrain layer
         terrainLayer.setCollisionByProperty({collides: true});
+        //same for trees
+        treeLayer.setCollisionByProperty({collides: true})
         //create player/terrain collider
         this.physics.add.collider(this.slime, terrainLayer);
+        this.physics.add.collider(this.slime, treeLayer);
     }
 
     update() {
